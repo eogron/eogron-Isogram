@@ -13,6 +13,14 @@ public class Isogram {
      * @return true if str is an isogram, false otherwise.
      */
     public boolean isIsogram(String str){
-        return false;
+        char[] word = str.toCharArray();
+        java.util.HashSet<Character> seen = new java.util.HashSet<Character>();
+        for (char letter : word) {
+            if (seen.contains(letter)){
+                return false;
+            }
+            seen.add(letter);
+        }
+        return true;
     }
 }
